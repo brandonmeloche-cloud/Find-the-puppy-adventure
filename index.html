@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the Puppy Adventure 🐶</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" id="app">
+      <section id="landing" class="screen landing active" aria-label="Landing page">
+        <h1>Find the Puppy Adventure 🐶</h1>
+        <p class="subtitle">A playful seek-and-find quest made for curious puppy detectives!</p>
+        <div class="hero-frame">
+          <img
+            src="assets/find-the-puppy-hero.png"
+            alt="Find the Puppy Adventure hero art"
+            class="hero-image"
+            onerror="this.style.display='none';this.parentElement.classList.add('hero-fallback')"
+          />
+          <div class="fallback-text">Drop your attached hero image at <code>assets/find-the-puppy-hero.png</code> 🖼️</div>
+        </div>
+        <button id="start-btn" class="paw-button" aria-label="Start the adventure">Start</button>
+      </section>
+
+      <section id="designer" class="screen" aria-label="Puppy designer">
+        <h2>Create your puppy pal</h2>
+        <p>Pick a breed, choose accessories, and give your puppy an awesome name.</p>
+
+        <div class="designer-grid">
+          <label>
+            Puppy name
+            <input id="puppy-name" type="text" maxlength="18" placeholder="Captain Snuggles" />
+          </label>
+
+          <label>
+            Breed
+            <select id="breed-select">
+              <option>Golden Retriever</option>
+              <option>Corgi</option>
+              <option>Dalmatian</option>
+              <option>Husky</option>
+              <option>Poodle</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Accessories</legend>
+            <label><input type="checkbox" value="Bandana" /> Bandana</label>
+            <label><input type="checkbox" value="Bow Tie" /> Bow Tie</label>
+            <label><input type="checkbox" value="Star Glasses" /> Star Glasses</label>
+            <label><input type="checkbox" value="Superhero Cape" /> Superhero Cape</label>
+          </fieldset>
+
+          <article class="preview" id="preview-card">
+            <h3>Puppy preview</h3>
+            <p id="preview-name">Name: Mystery Pup</p>
+            <p id="preview-breed">Breed: Golden Retriever</p>
+            <p id="preview-accessories">Accessories: None yet</p>
+          </article>
+        </div>
+
+        <button id="begin-game" class="primary-btn">Begin Level 1</button>
+      </section>
+
+      <section id="game" class="screen" aria-label="Game screen">
+        <header class="hud">
+          <p id="level-label">Level 1 / 5</p>
+          <p id="score-label">Score: 0</p>
+          <button id="hint-btn" class="hint-btn" aria-label="Get a hint">💡 Hint</button>
+        </header>
+        <p id="mission-text"></p>
+        <div id="level-area" class="level-area" role="button" tabindex="0" aria-label="Find the hidden puppy"></div>
+        <p id="hint-text" class="hint-text" aria-live="polite"></p>
+      </section>
+
+      <section id="ending" class="screen" aria-label="Celebration and coming soon">
+        <h2>You found every puppy! 🎉</h2>
+        <p id="ending-message"></p>
+        <div class="disco-pup" aria-hidden="true">🐶✨🪩✨🐶</div>
+        <p class="coming-soon">🌎 New world coming soon! Check back later for more puppy adventures.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
